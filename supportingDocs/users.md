@@ -7,7 +7,6 @@ Motivation: Wants to keep in touch with the world and experience new things thro
 I want to scroll and view photos
 So that I can keep up with my son’s experiences”
 
-
 Marvin
 Age: 27
 South Bend, Indiana
@@ -16,7 +15,6 @@ Motivation: Wants to find new inspiration or ways to look at the world that alig
 “As someone looking for inspiration from real experience
 I want to connect the identity of the creator to a real person
 So that I feel like what I am seeing has purpose and intention”
-
 
 Kelly
 Age: 48
