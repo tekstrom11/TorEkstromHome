@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Personal homepage featuring bio, work, and photos",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "eslint js/",
     "format": "prettier --write ."
@@ -14,10 +15,8 @@
   "author": "Tor Ekstrom",
   "license": "MIT",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.11.0",
-    "eslint-config-prettier": "^10.1.8",
-    "globals": "^17.12.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
     "prettier": "^3.0.3"
   }
 }

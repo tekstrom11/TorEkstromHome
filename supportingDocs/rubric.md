@@ -1,5 +1,9 @@
 # Rubric
 
+In this assignment you will be implementing your homepage using vanilla HTML5, CSS3 and ES6+. This should be a front-end only static page, so you shouldn't be using a backend or any components libraries. You cannot use jQuery, and all you JS code must be in ES6 modules. 
+
+Also, remember that you need to provide a creative addition to your page, something that will differentiate it from every other page. It can be implemented using ES6+ or HTML+CSS alone if you wish. e.g. My homepage has a honeycomb grid of project images, where each image is a link that takes you to the project.
+
 All criteria are graded as **Full Marks** or **No Marks** (0 pts).
 
 | #   | Criterion                                                                       | Details                                                                                                                                                                  | Pts     |
