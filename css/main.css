@@ -10,10 +10,47 @@
     background-position: center;
     padding-top: 1%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
+    padding-right: 2%;
 }
 
-h1 {
+.h1-main {
     font-family: fancy;
     color: black;
+    text-align: center;
 }
+
+.home-header {
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-box {
+    display: flex;
+    font-family: fancy;
+    font-size: xx-large;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: #191919;
+    background-color: #99999930;
+    padding: 3%;
+    min-width: 150px;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+a:hover {
+  font-weight: bold;
+  color: white;
+  background-color: #99999975;
+}
+
