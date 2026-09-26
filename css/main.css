@@ -1,0 +1,19 @@
+@font-face {
+    font-family: fancy;
+    src: url(../fonts/Tangerine-Regular.ttf);
+}
+
+.home-background {
+    background-image: url("../images/fisherGraveyard.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: fancy;
+    color: black;
+}
