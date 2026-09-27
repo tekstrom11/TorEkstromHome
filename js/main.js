@@ -1,6 +1,6 @@
 const navItems = [
-  { text: "Home", url: "/" },
-  { text: "About", url: "/about" },
+  { text: "Home", url: "index.html" },
+  { text: "About", url: "bio.html" },
   { text: "Services", url: "/services" },
   { text: "Portfolio", url: "/portfolio" },
   { text: "Contact", url: "/contact" },
@@ -17,7 +17,12 @@ navItems.forEach((item) => {
   a.textContent = item.text;
   a.href = item.url;
 
+  console.log(window.location.pathname);
+  console.log(item.url);
+
   // Append the link to the list item, and the list item to the nav container
-  li.appendChild(a);
-  navContainer.appendChild(li);
+  if (!window.location.pathname.endsWith(item.url)) {
+    li.appendChild(a);
+    navContainer.appendChild(li);
+  }
 });

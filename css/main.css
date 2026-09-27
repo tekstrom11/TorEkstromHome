@@ -29,11 +29,13 @@
   display: flex;
   font-family: fancy;
   font-size: xx-large;
+  justify-content: center;
 }
 
 .no-bullets {
   list-style-type: none;
   padding: 0;
+  
 }
 
 a {
@@ -52,6 +54,11 @@ a:hover {
   font-weight: bold;
   color: white;
   background-color: #99999975;
+}
+
+.h1-bio {
+    color: black;
+    text-align: center;
 }
 
 .bio-title {
