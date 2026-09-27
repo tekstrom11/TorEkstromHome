@@ -16,7 +16,7 @@
 
 .h1-main {
   font-family: "Trebuchet MS";
-  color: black;
+  color: white;
   text-align: center;
 }
 
@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-a {
+.nav-box a {
   display: inline-block;
   margin: 10px;
   text-decoration: none;
@@ -49,16 +49,16 @@ a {
   text-align: center;
 }
 
-a:hover {
+.nav-box a:hover {
   font-weight: bold;
   color: white;
   background-color: #99999975;
 }
 
 .h1-bio {
-    font-family: "Trebuchet MS";
-    color: black;
-    text-align: center;
+  font-family: "Trebuchet MS";
+  color: black;
+  text-align: center;
 }
 
 .bio-title {
@@ -66,9 +66,9 @@ a:hover {
 }
 
 .h1-gallery {
-    font-family: "Trebuchet MS";
-    color: black;
-    text-align: center;
+  font-family: "Trebuchet MS";
+  color: white;
+  text-align: center;
 }
 
 .gallery-top {
@@ -78,8 +78,54 @@ a:hover {
 }
 
 .background-img {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+.gal-cont {
+ display: flex;
+}
+
+.gal-cont-left{
+  justify-content: left;
+}
+
+.gal-cont-center{
+  justify-content: center;
+}
+
+.gal-cont-right{
+  justify-content: right;
   
+}
+
+
+.gal-fig {
+  display: flex;
+  gap: 1rem;
+  max-width: 50%;
+}
+
+.gal-fig-right {
+  flex-direction: row-reverse;
+}
+
+.gal-cap{
+  flex-shrink: 0
+}
+
+.gal-cap-left {
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.gal-cap-center {
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.gal-cap-right {
+  text-align: right;
+  flex-shrink: 0;
 }
