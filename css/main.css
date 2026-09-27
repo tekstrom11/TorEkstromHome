@@ -15,7 +15,7 @@
 }
 
 .h1-main {
-  font-family: fancy;
+  font-family: Trebuchet;
   color: black;
   text-align: center;
 }
@@ -57,6 +57,7 @@ a:hover {
 }
 
 .h1-bio {
+    font-family: trebuchet;
     color: black;
     text-align: center;
 }

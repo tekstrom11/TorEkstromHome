@@ -1,8 +1,7 @@
 const navItems = [
   { text: "Home", url: "index.html" },
   { text: "About", url: "bio.html" },
-  { text: "Services", url: "/services" },
-  { text: "Portfolio", url: "/portfolio" },
+  { text: "Gallery", url: "gallery.html" },
   { text: "Contact", url: "/contact" },
 ];
 
