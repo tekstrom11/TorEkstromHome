@@ -6,11 +6,11 @@ function MainModule(galImageSelector = "#galImages") {
   function getGalImageCode(galImage, map) {
     let direction;
 
-    if ((map + 1) % 5 === 1 || (map + 1) % 5 === 0) {
+    if (map % 4 === 0) {
       direction = "left";
-    } else if ((map + 1) % 5 === 2 || (map + 1) % 5 === 4) {
+    } else if (map % 4 === 1 || map % 4 === 3) {
       direction = "center";
-    } else if ((map + 1) % 5 === 3) {
+    } else if (map % 4 === 2) {
       direction = "right";
     }
 

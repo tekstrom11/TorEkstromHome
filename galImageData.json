@@ -1,30 +1,79 @@
 [
-  {
+    {
     "src": "images/purpleTree.jpg",
     "alt": "picture of a purple Tree",
     "title": "Purple Tree at a Wedding",
     "location": "Fort Mill, SC",
     "date": "2026"
-  },
+    },
     {
     "src": "images/giftshop.jpg",
     "alt": "picture of a gift shop",
     "title": "Gift Shop",
     "location": "Beaumaris, Wales",
     "date": "2026"
-  },
+    },
     {
     "src": "images/plantPeople.jpg",
     "alt": "picture of a person in a plant",
     "title": "Plant People",
     "location": "Fort Mill, SC",
     "date": "2026"
-  },
+    },
     {
     "src": "images/folksOnABoat.jpg",
     "alt": "picture of a people on a ferry",
     "title": "Folks on a Boat",
     "location": "Irish Sea",
     "date": "2026"
-  }
+    },
+    {
+    "src": "images/treePokingOut.jpg",
+    "alt": "picture of a tree rising over a building",
+    "title": "Tree Poking Out",
+    "location": "London, England",
+    "date": "2026"
+    },
+    {
+    "src": "images/wellLitFlowers.jpg",
+    "alt": "picture of some light coming around the corner, illuminating potted plants",
+    "title": "Well Lit Flowers",
+    "location": "Stockholm, Sweden",
+    "date": "2026"
+    },
+    {
+    "src": "images/pigeonMaze.jpg",
+    "alt": "picture some pigeon wandering around a prayer maze",
+    "title": "Pigeon Maze",
+    "location": "Bath, England",
+    "date": "2026"
+    },
+    {
+    "src": "images/colorfulSeating.jpg",
+    "alt": "picture some chairs an table on painted pavement",
+    "title": "Colorful Seating",
+    "location": "Somerville, Massachusetts",
+    "date": "2026"
+    },
+    {
+    "src": "images/wiresComingOut.jpg",
+    "alt": "picture some a house with interesting telephone wires",
+    "title": "Wires Coming Out",
+    "location": "Malden, Massachusetts",
+    "date": "2026"
+    },
+    {
+    "src": "images/eatingShit.jpg",
+    "alt": "picture of a person falling off a child's dirtbike",
+    "title": "Eating Shit",
+    "location": "Massachusetts",
+    "date": "2025"
+    },
+    {
+    "src": "images/christmasZone.jpg",
+    "alt": "picture of a forbidden part of the christmas village",
+    "title": "Christmas Zone",
+    "location": "Winchester, Massachusetts",
+    "date": "2025"
+    }
 ]
