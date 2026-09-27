@@ -20,6 +20,7 @@ navItems.forEach((item) => {
   console.log(item.url);
 
   // Append the link to the list item, and the list item to the nav container
+  // Unless matches current page, then skip
   if (!window.location.pathname.endsWith(item.url)) {
     li.appendChild(a);
     navContainer.appendChild(li);
