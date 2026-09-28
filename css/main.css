@@ -15,7 +15,7 @@
 }
 
 .h1-main {
-  font-family: "Trebuchet MS";
+  font-family: "Cormorant Garamond", Garamond, Georgia, serif;;
   color: white;
   text-align: center;
 }
@@ -27,8 +27,8 @@
 
 .nav-box {
   display: flex;
-  font-family: fancy;
-  font-size: xx-large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
   justify-content: center;
 }
 
@@ -44,7 +44,7 @@
   color: #191919;
   background-color: #99999930;
   padding: 3%;
-  min-width: 150px;
+  min-width: 120px;
   border-radius: 0.5rem;
   text-align: center;
 }
@@ -66,8 +66,8 @@
 }
 
 .h1-gallery {
-  font-family: "Trebuchet MS";
-  color: white;
+  font-family: "Cormorant Garamond", Garamond, Georgia, serif;;
+  color: black;
   text-align: center;
 }
 

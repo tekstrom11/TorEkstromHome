@@ -1,0 +1,532 @@
+/* ==========================================================
+   Bio page (the site's AI-generated page)
+   A professional page on warm paper that slowly descends into
+   a darker "after hours" half. Every rule is scoped to .tk-*
+   classes so nothing leaks into the pages that share main.css.
+   ========================================================== */
+
+/* ---------- Fonts (self-hosted, SIL Open Font License) ---------- */
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+/* ---------- Tokens ---------- */
+
+.tk-page {
+  --paper: #f4f1ec;
+  --ink: #1c1a19;
+  --muted: #6b645c;
+  --rule: rgb(28 26 25 / 14%);
+  --accent: #7d2127; /* oxblood; ~9:1 on paper */
+  --night: #0f0d0d;
+  --serif: "Cormorant Garamond", Garamond, Georgia, serif;
+  --sans:
+    "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Anything past the footer (short pages, overscroll) stays night,
+   so the page never "resurfaces" to paper after the descent. */
+html:has(.tk-page) {
+  background-color: #0f0d0d;
+}
+
+/* The dark half redefines the same tokens, so every component
+   below works in both without extra rules. */
+.tk-after {
+  --ink: #e6e0d4;
+  --muted: #9a9186;
+  --rule: rgb(230 224 212 / 14%);
+  --accent: #c9656a; /* lighter red; ~5:1 on night */
+
+  position: relative;
+  color: var(--ink);
+  background-color: var(--night);
+  isolation: isolate;
+}
+
+/* Film grain, only below the fold of the "exterior" */
+.tk-after::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+}
+
+.tk-page ::selection {
+  color: var(--paper);
+  background-color: var(--accent);
+}
+
+.tk-after ::selection {
+  color: var(--night);
+}
+
+.tk-page a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+}
+
+.tk-page a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.tk-page :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ---------- Top bar ---------- */
+
+.tk-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 1.75rem var(--gutter);
+}
+
+.tk-top-label {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tk-top-sep {
+  padding: 0 0.5em;
+  color: var(--accent);
+}
+
+/* Quiet text links instead of main.css's buttons. Two classes plus
+   a tag beats `.nav-box a`, so no !important is needed. */
+.tk-page .nav-box {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+}
+
+.tk-page .nav-box ul {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+
+.tk-page .nav-box a {
+  display: inline;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.tk-page .nav-box a:hover,
+.tk-page .nav-box a:focus-visible {
+  font-weight: normal;
+  color: var(--ink);
+  background-color: transparent;
+}
+
+/* ---------- Hero ---------- */
+
+.tk-hero {
+  display: grid;
+  gap: 3rem;
+  align-items: end;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 10vh, 7rem) var(--gutter) clamp(4rem, 12vh, 8rem);
+}
+
+@media (min-width: 860px) {
+  .tk-hero {
+    grid-template-columns: 7fr 4fr;
+    gap: 5rem;
+  }
+}
+
+.tk-name {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(3.25rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.tk-role {
+  max-width: 30rem;
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.tk-lede {
+  max-width: 26rem;
+  margin: 2.5rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.tk-portrait {
+  margin: 0;
+}
+
+.tk-portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 48% 50%;
+  filter: grayscale(0.85) contrast(1.05);
+  transition: filter 1.2s ease;
+}
+
+.tk-portrait:hover .tk-portrait-img {
+  filter: none;
+}
+
+/* ---------- Sections ---------- */
+
+.tk-section {
+  display: grid;
+  gap: 1.5rem 3rem;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 4.5rem var(--gutter);
+  border-top: 1px solid var(--rule);
+}
+
+.tk-after .tk-section:first-child {
+  border-top: 0;
+}
+
+@media (min-width: 860px) {
+  .tk-section {
+    grid-template-columns: minmax(10rem, 3fr) 8fr;
+  }
+
+  /* Section labels ride along while you read */
+  .tk-section-head {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+}
+
+.tk-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+}
+
+.tk-section-no {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  font-variant-numeric: oldstyle-nums;
+  color: var(--accent);
+}
+
+.tk-section-title {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tk-section-body {
+  max-width: 40rem;
+}
+
+.tk-section-body p {
+  margin: 0 0 1.25rem;
+  text-wrap: pretty;
+}
+
+.tk-intro {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.45;
+}
+
+/* ---------- Path ---------- */
+
+.tk-path {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.tk-path li {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 600px) {
+  .tk-path li {
+    grid-template-columns: 7.5rem 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Years set like a book's margin notes: italic, old-style figures */
+.tk-path-years {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-variant-numeric: oldstyle-nums;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.tk-path-title,
+.tk-path-role {
+  display: block;
+}
+
+.tk-path-title {
+  font-weight: 600;
+}
+
+.tk-path-role {
+  color: var(--muted);
+}
+
+.tk-section-body .tk-path-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ---------- Practice ---------- */
+
+.tk-facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 2rem;
+  margin: 2.5rem 0 0;
+}
+
+.tk-facts dt {
+  padding-top: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tk-facts dd {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .tk-facts {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .tk-facts dd {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ---------- The descent from paper into night ---------- */
+
+.tk-descent {
+  position: relative;
+  height: clamp(10rem, 32vh, 20rem);
+  background-image: linear-gradient(var(--paper), var(--night));
+}
+
+/* The page's only ornament */
+.tk-descent::after {
+  content: "\2767";
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: #c9656a;
+  transform: translateX(-50%);
+}
+
+/* ---------- Photography ---------- */
+
+.tk-display {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.tk-section-body .tk-display {
+  margin-bottom: 2rem;
+}
+
+.tk-frames {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 3rem 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tk-frames:empty {
+  display: none;
+}
+
+.tk-frame-link {
+  display: block;
+}
+
+.tk-frame-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.15) brightness(0.85);
+  transition: filter 0.8s ease;
+}
+
+.tk-frame-link:hover .tk-frame-img,
+.tk-frame-link:focus-visible .tk-frame-img {
+  filter: none;
+}
+
+.tk-section-body .tk-more {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.tk-quote {
+  margin: 3.5rem 0 0;
+  padding-left: 1.5rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  border-left: 1px solid var(--accent);
+}
+
+.tk-section-body .tk-quote p {
+  margin: 0;
+}
+
+/* ---------- Pastimes ---------- */
+
+.tk-index {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2 14rem;
+  column-gap: 3rem;
+}
+
+.tk-index li {
+  padding: 0.55rem 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--rule);
+  break-inside: avoid;
+}
+
+/* ---------- Footer ---------- */
+
+.tk-footer {
+  padding: 2rem var(--gutter) 3rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.tk-footer p {
+  margin: 0;
+}
+
+/* ---------- Motion and print ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .tk-portrait-img,
+  .tk-frame-img {
+    transition: none;
+  }
+}
+
+/* A clean, ink-saving printout of the page */
+@media print {
+  .tk-nav,
+  .tk-descent,
+  .tk-frames,
+  .tk-more,
+  .tk-after::before {
+    display: none;
+  }
+
+  .tk-page,
+  .tk-after {
+    --ink: #000;
+    --muted: #444;
+    --rule: #ccc;
+    --accent: #000;
+
+    color: #000;
+    background: #fff;
+  }
+
+  .tk-section-head {
+    position: static;
+  }
+
+  .tk-section {
+    break-inside: avoid;
+  }
+}

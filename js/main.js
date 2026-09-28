@@ -1,8 +1,7 @@
 const navItems = [
   { text: "Home", url: "index.html" },
-  { text: "About", url: "bio.html" },
+  { text: "Person", url: "bio.html" },
   { text: "Gallery", url: "gallery.html" },
-  { text: "Contact", url: "/contact" },
 ];
 
 const navContainer = document.getElementById("main-nav");
