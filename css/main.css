@@ -15,7 +15,7 @@
 }
 
 .h1-main {
-  font-family: "Cormorant Garamond", Garamond, Georgia, serif;;
+  font-family: "Cormorant Garamond", Garamond, Georgia, serif;
   color: black;
   text-align: center;
 }
@@ -27,7 +27,7 @@
 
 .nav-box {
   display: flex;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: large;
   justify-content: center;
 }
@@ -66,7 +66,7 @@
 }
 
 .h1-gallery {
-  font-family: "Cormorant Garamond", Garamond, Georgia, serif;;
+  font-family: "Cormorant Garamond", Garamond, Georgia, serif;
   color: black;
   text-align: center;
 }
@@ -84,22 +84,20 @@
 }
 
 .gal-cont {
- display: flex;
+  display: flex;
 }
 
-.gal-cont-left{
+.gal-cont-left {
   justify-content: left;
 }
 
-.gal-cont-center{
+.gal-cont-center {
   justify-content: center;
 }
 
-.gal-cont-right{
+.gal-cont-right {
   justify-content: right;
-  
 }
-
 
 .gal-fig {
   display: flex;
@@ -111,8 +109,8 @@
   flex-direction: row-reverse;
 }
 
-.gal-cap{
-  flex-shrink: 0
+.gal-cap {
+  flex-shrink: 0;
 }
 
 .gal-cap-left {
