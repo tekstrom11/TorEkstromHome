@@ -6,7 +6,7 @@ A personal homepage and film-photography blog, built with vanilla HTML5, CSS3, a
 
 - **Author:** Tor Ekstrom
 - **Class:** [CS 5610 Web Development, Northeastern University, Fall 2026](https://johnguerra.co/classes/webDevelopment_online_fall_2026/index.html)
-- **Live site:** _add the GitHub Pages link once deployed_
+- **Live site:** [_Tor Ekstrom Home Page_](https://tekstrom11.github.io/TorEkstromHome/index.html)
 - **License:** [MIT](LICENSE)
 
 ## Project objective
