@@ -1,1 +1,1 @@
-This is a personal webpage developed as an assignment for CS5160 Web Development at Northeastern University in Fall 2026.
+This is a personal webpage developed as an assignment for CS56100 Web Development at Northeastern University in Fall 2026.
