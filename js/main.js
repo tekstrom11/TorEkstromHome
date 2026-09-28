@@ -6,6 +6,11 @@ const navItems = [
 
 const navContainer = document.getElementById("main-nav");
 
+// The folder URL (.../TorEkstromHome/) is the home page too
+const currentPath = window.location.pathname.endsWith("/")
+  ? window.location.pathname + "index.html"
+  : window.location.pathname;
+
 navItems.forEach((item) => {
   // Create the list item and anchor tag
   const li = document.createElement("li");
@@ -15,12 +20,9 @@ navItems.forEach((item) => {
   a.textContent = item.text;
   a.href = item.url;
 
-  console.log(window.location.pathname);
-  console.log(item.url);
-
   // Append the link to the list item, and the list item to the nav container
   // Unless matches current page, then skip
-  if (!window.location.pathname.endsWith(item.url)) {
+  if (!currentPath.endsWith(item.url)) {
     li.appendChild(a);
     navContainer.appendChild(li);
   }
